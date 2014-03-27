@@ -59,7 +59,7 @@ public class App {
 		for (Entry<String, Integer> entry : filters.entrySet()) {
 			String ip = entry.getKey();
 			Integer count = entry.getValue();
-			if (count > 5) {
+			if (count > 3) {
 				System.out.println("iptables -I INPUT -s " + ip + " -j DROP");
 			}
 		}
