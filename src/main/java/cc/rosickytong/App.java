@@ -30,6 +30,9 @@ public class App {
 			File[] files = folder.listFiles();
 			for (int i = 0; i < files.length; i++) {
 				File file = files[i];
+				if (file.isHidden()) {
+					continue;
+				}
 				Path path = file.toPath();
 				List<String> lines = Files.readAllLines(path,
 						Charset.defaultCharset());
